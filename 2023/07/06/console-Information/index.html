@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>console命令详解 | 李合旭の博客</title><meta name="keywords" content="javascript"><meta name="author" content="李合旭"><meta name="copyright" content="李合旭"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="console.log是我们最常用的命令，但是还有很多方法可以使用，掌握这些将使控制台看到的信息更美观准确 清空控制台当我们在console中信息过多的时候，可以使用clear()命令或者使用命令console.clear()来清空控制台中的输出。  显示信息的命令12345console.log(&amp;#x27;&amp;#x27;)     &#x2F;&#x2F; 输出普通信息console.info(&amp;#x27;&amp;#x2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="console命令详解">
+<meta property="og:url" content="http://example.com/2023/07/06/console-Information/index.html">
+<meta property="og:site_name" content="李合旭の博客">
+<meta property="og:description" content="console.log是我们最常用的命令，但是还有很多方法可以使用，掌握这些将使控制台看到的信息更美观准确 清空控制台当我们在console中信息过多的时候，可以使用clear()命令或者使用命令console.clear()来清空控制台中的输出。  显示信息的命令12345console.log(&amp;#x27;&amp;#x27;)     &#x2F;&#x2F; 输出普通信息console.info(&amp;#x27;&amp;#x2">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images.alphacoders.com/665/665091.jpg">
+<meta property="article:published_time" content="2023-07-06T14:55:28.365Z">
+<meta property="article:modified_time" content="2023-07-06T16:37:50.433Z">
+<meta property="article:author" content="李合旭">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.alphacoders.com/665/665091.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/07/06/console-Information/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-07 00:37:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/cat.css"><div id="myscoll"></div><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://pit1.topit.pro/forum/202105/30/142111ted2aasdg2edkd2g.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/pigeonhole/"><i class="fa-fw fas fa-folder"></i><span> 归类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://images.alphacoders.com/665/665091.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">李合旭の博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/pigeonhole/"><i class="fa-fw fas fa-folder"></i><span> 归类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">console命令详解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-06T14:55:28.365Z" title="发表于 2023-07-06 22:55:28">2023-07-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-06T16:37:50.433Z" title="更新于 2023-07-07 00:37:50">2023-07-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="console命令详解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>console.log是我们最常用的命令，但是还有很多方法可以使用，掌握这些将使控制台看到的信息更美观准确</p>
+<h2 id="清空控制台"><a href="#清空控制台" class="headerlink" title="清空控制台"></a>清空控制台</h2><p>当我们在console中信息过多的时候，可以使用<code>clear()</code>命令或者使用命令<code>console.clear()</code>来清空控制台中的输出。 </p>
+<h2 id="显示信息的命令"><a href="#显示信息的命令" class="headerlink" title="显示信息的命令"></a>显示信息的命令</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;&#x27;</span>)     <span class="comment">// 输出普通信息</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&#x27;&#x27;</span>)    <span class="comment">// 输出提示信息</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">debug</span>(<span class="string">&#x27;&#x27;</span>)   <span class="comment">// 输出调试信息</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">warn</span>(<span class="string">&#x27;&#x27;</span>)    <span class="comment">// 输出警告信息</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;&#x27;</span>)   <span class="comment">// 输出错误信息</span></span><br></pre></td></tr></table></figure>
+<p><code>console.log</code>、<code>console.info</code>、<code>console.debug</code> 这三个命令可以理解为一个，我们只需要用<code>console.log</code><br><code>console.warn</code> 命令输出警告信息，信息前带有黄色警告符号<br><code>console.error</code> 输出错误信息，信息前带有红色错误符号，表示出错</p>
+<h2 id="信息分组"><a href="#信息分组" class="headerlink" title="信息分组"></a>信息分组</h2><p><code>console.group()</code> 用于将显示的信息分组，可以把信息进行折叠和展开<br><code>console.groupEnd()</code>结束内联分组<br><img src="https://mp-ff3b7edc-1512-45cb-a08e-619ebf2afec4.cdn.bspapp.com/blog/essay/console-Information/group.png" alt="console.group"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">group</span>(<span class="string">&quot;分组一&quot;</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;第一条&quot;</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;第二条&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">groupEnd</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">group</span>(<span class="string">&quot;分组二&quot;</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;第一条&quot;</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;第二条&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">groupEnd</span>();</span><br></pre></td></tr></table></figure>
+
+<h2 id="将对象以树状结构展现"><a href="#将对象以树状结构展现" class="headerlink" title="将对象以树状结构展现"></a>将对象以树状结构展现</h2><p><code>console.dir()</code>可以显示一个对象所有的属性和方法<br><img src="https://mp-ff3b7edc-1512-45cb-a08e-619ebf2afec4.cdn.bspapp.com/blog/essay/console-Information/dir.png" alt="console.dir"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="string">&quot;aaa&quot;</span>,</span><br><span class="line">    <span class="attr">b</span>: <span class="number">111</span>,</span><br><span class="line">    <span class="attr">c</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">d</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">d</span> = <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">d</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(obj)</span><br></pre></td></tr></table></figure>
+
+<h2 id="显示某个节点内容"><a href="#显示某个节点内容" class="headerlink" title="显示某个节点内容"></a>显示某个节点内容</h2><p><code>console.dirxml()</code>用来显示网页的某个节点(node)所包含的html&#x2F;xml代码<br><img src="https://mp-ff3b7edc-1512-45cb-a08e-619ebf2afec4.cdn.bspapp.com/blog/essay/console-Information/dirxml.png" alt="console.dirxml"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dom = <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;h1&quot;</span>)[<span class="number">0</span>]</span><br><span class="line">dom.<span class="property">innerHtml</span> = <span class="string">&quot;&lt;h2&gt;dirxml测试&lt;/h2&gt;&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dirxml</span>(dom)</span><br></pre></td></tr></table></figure>
+
+<h2 id="判断变量是否是真"><a href="#判断变量是否是真" class="headerlink" title="判断变量是否是真"></a>判断变量是否是真</h2><p><code>console.assert()</code>用来判断一个表达式或变量是否为真，<br>此方法接受两个参数，第一个参数是表达式，第二个参数是字符串。只有当第一个参数为<code>false</code>，才会输出第二个参数，否则不会有任何结果<br><img src="https://mp-ff3b7edc-1512-45cb-a08e-619ebf2afec4.cdn.bspapp.com/blog/essay/console-Information/assert.png" alt="console.dirxml"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">assert</span>(<span class="literal">true</span> === <span class="literal">false</span>, <span class="string">&quot;判断条件不成立&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="计时功能"><a href="#计时功能" class="headerlink" title="计时功能"></a>计时功能</h2><p><code>console.time()</code>和<code>console.timeEnd()</code>，用来显示代码的运行时间<br><img src="https://mp-ff3b7edc-1512-45cb-a08e-619ebf2afec4.cdn.bspapp.com/blog/essay/console-Information/time.png" alt="console.dirxml"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&quot;控制台计时器&quot;</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">10000</span>; j++)&#123;&#125;       </span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&quot;控制台计时器&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="表格显示方法"><a href="#表格显示方法" class="headerlink" title="表格显示方法"></a>表格显示方法</h2><p><code>console.table([])</code>表格显示方法<br><img src="https://mp-ff3b7edc-1512-45cb-a08e-619ebf2afec4.cdn.bspapp.com/blog/essay/console-Information/table.png" alt="console.dirxml"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">a</span>:<span class="number">1</span>,</span><br><span class="line">        <span class="attr">b</span>:<span class="number">2</span>,</span><br><span class="line">        <span class="attr">c</span>:<span class="number">3</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">a</span>:<span class="number">4</span>,</span><br><span class="line">        <span class="attr">b</span>:<span class="number">5</span>,</span><br><span class="line">        <span class="attr">c</span>:<span class="number">6</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">table</span>(arr)</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">李合旭</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/07/06/console-Information/">http://example.com/2023/07/06/console-Information/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">李合旭の博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/javascript/">javascript</a></div><div class="post_share"><div class="social-share" data-image="https://images.alphacoders.com/665/665091.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/07/05/axios-encapsulation/"><img class="next-cover" src="https://pic2.zhimg.com/80/v2-dae9726fa2542078dc96059f7826fc79_720w.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">axios如何二次封装</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/07/05/axios-encapsulation/" title="axios如何二次封装"><img class="cover" src="https://pic2.zhimg.com/80/v2-dae9726fa2542078dc96059f7826fc79_720w.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-05</div><div class="title">axios如何二次封装</div></div></a></div><div><a href="/2023/07/04/js-deduplication/" title="JS 数组去重"><img class="cover" src="https://images2.alphacoders.com/128/1281551.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-04</div><div class="title">JS 数组去重</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://pit1.topit.pro/forum/202105/30/142111ted2aasdg2edkd2g.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">李合旭</div><div class="author-info__description">2023年的理想开始实现了吗？</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://s1.ax1x.com/2023/07/06/pCyxai8.png" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://s1.ax1x.com/2023/07/06/pCyxRiT.jpg" target="_blank" title="wechat"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://github.com/1017589486" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1017589486@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content"></div><div class="xpand" style="height:0;"></div><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/twopeople1.js"></script><script src="https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/zdog.dist.js"></script><script id="rendered-js" src="https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/twopeople.js"></script><style>.card-widget.card-announcement {
+margin: 0;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+canvas {
+display: block;
+margin: 0 auto;
+cursor: move;
+}</style><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA%E6%8E%A7%E5%88%B6%E5%8F%B0"><span class="toc-number">1.</span> <span class="toc-text">清空控制台</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E4%BF%A1%E6%81%AF%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">显示信息的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E5%88%86%E7%BB%84"><span class="toc-number">3.</span> <span class="toc-text">信息分组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E5%AF%B9%E8%B1%A1%E4%BB%A5%E6%A0%91%E7%8A%B6%E7%BB%93%E6%9E%84%E5%B1%95%E7%8E%B0"><span class="toc-number">4.</span> <span class="toc-text">将对象以树状结构展现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%9F%90%E4%B8%AA%E8%8A%82%E7%82%B9%E5%86%85%E5%AE%B9"><span class="toc-number">5.</span> <span class="toc-text">显示某个节点内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%8F%98%E9%87%8F%E6%98%AF%E5%90%A6%E6%98%AF%E7%9C%9F"><span class="toc-number">6.</span> <span class="toc-text">判断变量是否是真</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E6%97%B6%E5%8A%9F%E8%83%BD"><span class="toc-number">7.</span> <span class="toc-text">计时功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E6%98%BE%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">表格显示方法</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/06/console-Information/" title="console命令详解"><img src="https://images.alphacoders.com/665/665091.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="console命令详解"/></a><div class="content"><a class="title" href="/2023/07/06/console-Information/" title="console命令详解">console命令详解</a><time datetime="2023-07-06T14:55:28.365Z" title="发表于 2023-07-06 22:55:28">2023-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/05/axios-encapsulation/" title="axios如何二次封装"><img src="https://pic2.zhimg.com/80/v2-dae9726fa2542078dc96059f7826fc79_720w.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="axios如何二次封装"/></a><div class="content"><a class="title" href="/2023/07/05/axios-encapsulation/" title="axios如何二次封装">axios如何二次封装</a><time datetime="2023-07-05T15:39:22.930Z" title="发表于 2023-07-05 23:39:22">2023-07-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/04/js-deduplication/" title="JS 数组去重"><img src="https://images2.alphacoders.com/128/1281551.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JS 数组去重"/></a><div class="content"><a class="title" href="/2023/07/04/js-deduplication/" title="JS 数组去重">JS 数组去重</a><time datetime="2023-07-04T15:49:56.048Z" title="发表于 2023-07-04 23:49:56">2023-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/04/hello-world/" title="Hello World"><img src="https://images3.alphacoders.com/131/1318233.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2023/07/04/hello-world/" title="Hello World">Hello World</a><time datetime="2023-07-04T15:22:17.339Z" title="发表于 2023-07-04 23:22:17">2023-07-04</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://images8.alphacoders.com/131/1317219.jpeg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023  <i id="heartbeat" class="fa fas fa-heartbeat"></i> 李合旭</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/cat.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":20,"vOffset":-20},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
